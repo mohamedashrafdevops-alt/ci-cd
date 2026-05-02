@@ -47,12 +47,12 @@ jobs:
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/telemed-frontend:latest
 
     
-    - name: Update K8s Manifests with DockerHub Username
-      run: |
-        sed -i 's/YOUR_DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/g' k8s/backend.yaml
-        sed -i 's/YOUR_DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/g' k8s/frontend.yaml
+   # - name: Update K8s Manifests with DockerHub Username
+    #  run: |
+     #   sed -i 's/YOUR_DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/g' k8s/backend.yaml
+      #  sed -i 's/YOUR_DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/g' k8s/frontend.yaml
 
-    - name: Deploy to Kubernetes
-      run: |
-        kubectl apply -f k8s/backend.yaml
-        kubectl apply -f k8s/frontend.yaml
+    #- name: Deploy to Kubernetes
+     # run: |
+      #  kubectl apply -f k8s/backend.yaml
+       # kubectl apply -f k8s/frontend.yaml
